@@ -9,7 +9,7 @@ def callTheAPI():
 
   URI="https://graph.microsoft.com/v1.0/directoryRoles/roleTemplateId=62e90394-69f5-4237-9190-012177145e10/members/$ref" 
 
-  BODY=  {"@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/23755f28-0cf4-46e5-9b51-773cbb13814b"}
+  BODY=  {"@odata.id": "https://graph.microsoft.com/v1.0/directoryObjects/valid-app-object-id"}
 
   assignGlobalAdminCommand='az rest --method POST --uri '+URI+' --header Content-Type=application/json --body "'+str(BODY)+'"'
 
