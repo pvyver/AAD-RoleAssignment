@@ -9,7 +9,7 @@ def callTheAPI():
   URI="https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments"
 
   BODY={
-    "principalId": "96eac8db-120e-4cde-96b6-752b4a4be378",
+    "principalId": "valid-user-object-id",
     "roleDefinitionId": "62e90394-69f5-4237-9190-012177145e10",
     "directoryScopeId": "/"
   }
