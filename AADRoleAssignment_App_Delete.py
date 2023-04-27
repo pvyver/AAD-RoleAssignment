@@ -11,12 +11,9 @@ def callTheAPI():
 
   DIRECTORY_ROLE_TEMPLATE_ID="62e90394-69f5-4237-9190-012177145e10" # Global Admin Role Template Id
 
-  URI='https://graph.microsoft.com/v1.0/directoryRoles/roleTemplateId='+DIRECTORY_ROLE_TEMPLATE_ID+'/members/$ref' 
+  URI='https://graph.microsoft.com/v1.0/directoryRoles/roleTemplateId='+DIRECTORY_ROLE_TEMPLATE_ID+'/members/'+SERVICE_PRINCIPAL_OBJECT_ID+'/$ref'
 
-  BODY={}
-  BODY['@odata.id']='https://graph.microsoft.com/v1.0/directoryObjects/'+SERVICE_PRINCIPAL_OBJECT_ID
-
-  assignGlobalAdminCommand='az rest --method POST --uri '+URI+' --header Content-Type=application/json --body "'+str(BODY)+'"'
+  assignGlobalAdminCommand='az rest --method DELETE --uri '+URI+''
 
   proc = subprocess.Popen(assignGlobalAdminCommand,cwd=None, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
   while True:
